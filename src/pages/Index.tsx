@@ -239,8 +239,13 @@ export default function Index() {
   const [requestForm, setRequestForm] = useState({ name: "", phone: "", comment: "" });
   const [requestSent, setRequestSent] = useState(false);
 
-  const handleRequestSubmit = (e: React.FormEvent) => {
+  const handleRequestSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await fetch("https://functions.poehali.dev/556db68f-faa3-4871-9852-301c304c5fde", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...requestForm, tour: requestTour }),
+    });
     setRequestSent(true);
     setTimeout(() => { setRequestOpen(false); setRequestSent(false); setRequestForm({ name: "", phone: "", comment: "" }); }, 2500);
   };
