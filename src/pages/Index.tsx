@@ -9,6 +9,7 @@ const IMG_LAKE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941
 const IMG_BAAY_TIIT = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/6567bfa1-d81f-4ea4-8640-d8ff1f549636.jpg";
 const IMG_THREE_BEARS = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/369f07a6-fd7e-4755-8958-d8a92826408a.jpg";
 const IMG_LOVE_BRIDGE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/3b5dacf2-9e80-4cca-a641-43edafc9c614.jpg";
+const IMG_AAR_KHATYN = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/4064e82b-f1b6-4f7d-ae5b-ea8af7916e90.jpg";
 
 const NAV_ITEMS = [
   { id: "home", ru: "Главная", sah: "Дьиэ" },
@@ -142,6 +143,14 @@ const SACRED_PLACES = [
     icon: "Heart",
     img: IMG_LOVE_BRIDGE,
   },
+  {
+    id: 6,
+    name: "Аар Хатыҥ",
+    sub: "Символ веры народа саха",
+    desc: "Аар Хатыҥ — Великая Берёза, священное дерево веры саха. Обнесена деревянной оградой как живой памятник духовной силы народа. По верованиям, береза соединяет три мира: верхний, средний и нижний. К ней приходят просить благословения, здоровья и защиты.",
+    icon: "Leaf",
+    img: IMG_AAR_KHATYN,
+  },
 ];
 
 const GALLERY_ITEMS = [
@@ -151,6 +160,7 @@ const GALLERY_ITEMS = [
   { img: IMG_HERO, caption: "Тропа Кочай", captionSah: "Кочай суола" },
   { img: IMG_SACRED, caption: "Сэргэ — знак предков", captionSah: "Сэргэ — эбэ-эhэ бэлиэтэ" },
   { img: IMG_LAKE, caption: "Священное озеро", captionSah: "Ытык Күөл" },
+  { img: IMG_AAR_KHATYN, caption: "Аар Хатыҥ — символ веры", captionSah: "Итэҕэл бэлиэтэ — Аар Хатыҥ" },
 ];
 
 const DIFFICULTY_COLORS: Record<string, string> = {
