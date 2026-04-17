@@ -125,12 +125,14 @@ const SACRED_PLACES = [
   },
 ];
 
+const IMG_BAAY_TIIT = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/6567bfa1-d81f-4ea4-8640-d8ff1f549636.jpg";
+
 const GALLERY_ITEMS = [
-  { img: IMG_HERO, caption: "Вилюйский закат", captionSah: "Биллүүр күн бүтүүтэ" },
+  { img: IMG_BAAY_TIIT, caption: "Баай тиит — символ богатства", captionSah: "Эллэй хоhуйбут баай тиитэ" },
+  { img: IMG_HERO, caption: "Тропа Кочай", captionSah: "Кочай суола" },
   { img: IMG_SACRED, caption: "Сэргэ — знак предков", captionSah: "Сэргэ — эбэ-эhэ бэлиэтэ" },
   { img: IMG_TRAIL, caption: "Тропы Нюрбы", captionSah: "Ньурба суоллара" },
   { img: IMG_LAKE, caption: "Священное озеро", captionSah: "Ытык Күөл" },
-  { img: IMG_HERO, caption: "Зимняя тайга", captionSah: "Кыһыҥҥы тыа" },
   { img: IMG_TRAIL, caption: "Осенний маршрут", captionSah: "Күһүҥҥү айан" },
 ];
 
