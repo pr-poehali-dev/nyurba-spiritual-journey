@@ -12,6 +12,7 @@ const IMG_LOVE_BRIDGE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b54
 const IMG_AAR_KHATYN = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/4064e82b-f1b6-4f7d-ae5b-ea8af7916e90.jpg";
 const IMG_SETTE_MYRAАН = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/ee79571e-2e1c-415b-80be-1aac72e87938.jpg";
 const IMG_SATA_KHAYATA = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/7edbc879-dcbb-4043-bcd8-25999a23f3d7.jpg";
+const IMG_MOKHULU = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/e4f6042c-0b3b-4bb2-b160-35a2bf148ace.jpg";
 
 const NAV_ITEMS = [
   { id: "home", ru: "Главная", sah: "Дьиэ" },
@@ -169,6 +170,14 @@ const SACRED_PLACES = [
     icon: "Waves",
     img: IMG_SATA_KHAYATA,
   },
+  {
+    id: 9,
+    name: "Мохулу",
+    sub: "Священное дерево — с. Малдьаҕар",
+    desc: "Мохулу — древний исполин с раскидистыми ветвями-руками в таёжной роще села Малдьаҕар. Этот могучий лиственничный патриарх почитается как живое воплощение иччи леса. Корни уходят в землю предков, крона тянется к небесным айыы. Место тишины, размышления и связи с родом.",
+    icon: "TreeDeciduous",
+    img: IMG_MOKHULU,
+  },
 ];
 
 const GALLERY_ITEMS = [
@@ -181,6 +190,7 @@ const GALLERY_ITEMS = [
   { img: IMG_AAR_KHATYN, caption: "Аар Хатыҥ — символ веры", captionSah: "Итэҕэл бэлиэтэ — Аар Хатыҥ" },
   { img: IMG_SETTE_MYRAАН, caption: "Сэттэ ытык мыраан — с. Чукар", captionSah: "Бага санааны толорор хаартыска" },
   { img: IMG_SATA_KHAYATA, caption: "Сата Хайата — место силы", captionSah: "Сата Хайата — күүс сирэ" },
+  { img: IMG_MOKHULU, caption: "Мохулу — с. Малдьаҕар", captionSah: "Малдьаҕар ытык мохулута" },
 ];
 
 const DIFFICULTY_COLORS: Record<string, string> = {
