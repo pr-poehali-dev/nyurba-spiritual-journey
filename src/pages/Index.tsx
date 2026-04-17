@@ -121,7 +121,7 @@ const SACRED_PLACES = [
   },
   {
     id: 5,
-    name: "Таптал Кэмпириэтэ",
+    name: "ТАПТАЛ ДАЛАҺАТА",
     sub: "Мост Любви — с. Дьиикимдэ",
     desc: "Белый мост с алым сердцем и фонтанами в селе Дьиикимдэ — романтическое место силы Нюрбинского района. Молодожёны приходят сюда загадать желание и скрепить союз. Красота этого места поражает всех путников.",
     icon: "Heart",
@@ -164,7 +164,7 @@ const SACRED_PLACES = [
 const GALLERY_ITEMS = [
   { img: IMG_BAAY_TIIT, caption: "Баай тиит — символ богатства", captionSah: "Эллэй хоhуйбут баай тиитэ" },
   { img: IMG_THREE_BEARS, caption: "Три медведя — место силы", captionSah: "Үс эһэ — күүс сирэ" },
-  { img: IMG_LOVE_BRIDGE, caption: "Мост Любви — с. Дьиикимдэ", captionSah: "Таптал кэмпириэтэ — Дьиикимдэ" },
+  { img: IMG_LOVE_BRIDGE, caption: "Мост Любви — с. Дьиикимдэ", captionSah: "ТАПТАЛ ДАЛАҺАТА — Дьиикимдэ" },
   { img: IMG_HERO, caption: "Тропа Кочай", captionSah: "Кочай суола" },
 
   { img: IMG_LAKE, caption: "Священное озеро", captionSah: "Ытык Күөл" },
