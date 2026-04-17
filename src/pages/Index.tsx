@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
+import NyurbaMap from "@/components/NyurbaMap";
 
-const IMG_HERO = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/0e6dca31-0668-4022-b4ee-a7886b40bdf2.jpg";
+const IMG_HERO = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/7a85929c-2a1d-47b3-8664-f48e981a88b6.jpg";
 const IMG_SACRED = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/0e14db09-2da4-40f4-8089-167df51ef0b0.jpg";
 const IMG_TRAIL = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/3f65f7c6-ced0-418c-b524-44ead2ccbaf0.jpg";
 const IMG_LAKE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/7b4f8f24-c78f-418a-b82a-db0cf4e442ca.jpg";
 
 const NAV_ITEMS = [
   { id: "home", ru: "Главная", sah: "Дьиэ" },
+  { id: "map", ru: "Карта", sah: "Карта" },
   { id: "routes", ru: "Маршруты", sah: "Айан суоллар" },
   { id: "sacred", ru: "Священные места", sah: "Ытык сирдэр" },
   { id: "gallery", ru: "Галерея", sah: "Галерея" },
@@ -363,6 +365,25 @@ export default function Index() {
             </AnimSection>
           ))}
         </div>
+      </section>
+
+      {/* MAP */}
+      <section id="map" className="py-20 px-6 max-w-7xl mx-auto">
+        <AnimSection className="text-center mb-10">
+          <span className="text-xs tracking-[0.35em] text-[#d4a843] uppercase">Карта района</span>
+          <h2 className="font-serif mt-2 mb-3" style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "#e8dcc8" }}>
+            Карта Нюрбинского района
+          </h2>
+          <div className="sacred-divider max-w-xs mx-auto mb-4">
+            <span className="ornament">✦</span>
+          </div>
+          <p className="text-[#9b8060] max-w-lg mx-auto text-sm leading-relaxed">
+            Священные места, маршруты и местность Кочай на интерактивной карте. Нажмите на метку, чтобы узнать подробнее.
+          </p>
+        </AnimSection>
+        <AnimSection>
+          <NyurbaMap />
+        </AnimSection>
       </section>
 
       {/* ROUTES */}
