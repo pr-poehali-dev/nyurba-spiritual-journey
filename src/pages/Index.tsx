@@ -117,23 +117,32 @@ const SACRED_PLACES = [
   },
   {
     id: 3,
-    name: "Тайга үрэх",
-    sub: "Таёжная река",
-    desc: "Священная таёжная река, берущая начало в горах. Считается, что её воды обладают целительной силой и дарят путникам защиту.",
-    icon: "Wind",
-    img: IMG_TRAIL,
+    name: "Үс Эһэ",
+    sub: "Три медведя — место силы",
+    desc: "Деревянные скульптуры трёх медведей в таёжном урочище — место силы и духа. По преданиям саха, медведь (эһэ) — священное животное, хранитель леса и предок охотников. Сюда приходят за защитой и силой.",
+    icon: "Shield",
+    img: IMG_THREE_BEARS,
+  },
+  {
+    id: 4,
+    name: "Баай Тиит",
+    sub: "Символ богатства и процветания",
+    desc: "Эллэй хоhуйбут баай тиитэ — древнее священное дерево Нюрбы, воспетое Эллэем. Символ богатства и процветания народа саха. Обнесено оградой как памятник природы и духовного наследия.",
+    icon: "TreePine",
+    img: IMG_BAAY_TIIT,
   },
 ];
 
 const IMG_BAAY_TIIT = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/6567bfa1-d81f-4ea4-8640-d8ff1f549636.jpg";
+const IMG_THREE_BEARS = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/369f07a6-fd7e-4755-8958-d8a92826408a.jpg";
 
 const GALLERY_ITEMS = [
   { img: IMG_BAAY_TIIT, caption: "Баай тиит — символ богатства", captionSah: "Эллэй хоhуйбут баай тиитэ" },
+  { img: IMG_THREE_BEARS, caption: "Три медведя — место силы", captionSah: "Үс эһэ — күүс сирэ" },
   { img: IMG_HERO, caption: "Тропа Кочай", captionSah: "Кочай суола" },
   { img: IMG_SACRED, caption: "Сэргэ — знак предков", captionSah: "Сэргэ — эбэ-эhэ бэлиэтэ" },
   { img: IMG_TRAIL, caption: "Тропы Нюрбы", captionSah: "Ньурба суоллара" },
   { img: IMG_LAKE, caption: "Священное озеро", captionSah: "Ытык Күөл" },
-  { img: IMG_TRAIL, caption: "Осенний маршрут", captionSah: "Күһүҥҥү айан" },
 ];
 
 const DIFFICULTY_COLORS: Record<string, string> = {
