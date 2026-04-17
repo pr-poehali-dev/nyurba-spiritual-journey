@@ -41,7 +41,7 @@ const ROUTES = [
   {
     id: 2,
     name: "Плато Вилюй",
-    nameSah: "Биллүүр хайалара",
+    nameSah: "БҮЛҮҮ хайалара",
     difficulty: "medium",
     difficultyLabel: "Средний",
     duration: "3 дня",
@@ -81,7 +81,7 @@ const ROUTES = [
   {
     id: 6,
     name: "Зимний Вилюй",
-    nameSah: "Кыһыҥҥы Биллүүр",
+    nameSah: "Кыһыҥҥы БҮЛҮҮ",
     difficulty: "medium",
     difficultyLabel: "Средний",
     duration: "2 дня",

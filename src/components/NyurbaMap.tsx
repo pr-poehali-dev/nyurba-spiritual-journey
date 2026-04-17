@@ -51,7 +51,7 @@ const MAP_POINTS = [
   {
     id: 5,
     name: "Маршрут: Плато Вилюй",
-    nameSah: "Биллүүр хайалара",
+    nameSah: "БҮЛҮҮ хайалара",
     type: "route",
     lat: 63.40,
     lng: 118.60,
