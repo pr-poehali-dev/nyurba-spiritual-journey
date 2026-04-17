@@ -737,7 +737,7 @@ export default function Index() {
             {[
               { icon: "MapPin", title: "Адрес", lines: ["Республика Саха (Якутия)", "Нюрбинский район, г. Нюрба"] },
               { icon: "Phone", title: "Телефон", lines: ["+7 968 150-38-98", "Кутаахаан Сэргэн Лэкээрин"] },
-              { icon: "Mail", title: "Email", lines: ["info@nyurba-tour.ru", "Ответим в течение дня"] },
+              { icon: "Mail", title: "Email", lines: ["sivail@yandex.ru", "Ответим в течение дня"] },
             ].map((c, i) => (
               <AnimSection key={i}>
                 <div className="glass-card rounded p-6 text-center">
