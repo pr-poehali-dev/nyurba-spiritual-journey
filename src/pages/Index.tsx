@@ -234,6 +234,16 @@ export default function Index() {
   const [filterDifficulty, setFilterDifficulty] = useState("all");
   const [filterDuration, setFilterDuration] = useState("all");
   const [galleryOpen, setGalleryOpen] = useState<number | null>(null);
+  const [requestOpen, setRequestOpen] = useState(false);
+  const [requestTour, setRequestTour] = useState("");
+  const [requestForm, setRequestForm] = useState({ name: "", phone: "", comment: "" });
+  const [requestSent, setRequestSent] = useState(false);
+
+  const handleRequestSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setRequestSent(true);
+    setTimeout(() => { setRequestOpen(false); setRequestSent(false); setRequestForm({ name: "", phone: "", comment: "" }); }, 2500);
+  };
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
@@ -873,6 +883,16 @@ export default function Index() {
               </div>
             </AnimSection>
           </div>
+          <AnimSection className="text-center mt-10">
+            <button
+              onClick={() => { setRequestTour("«Священные места Нюрбинского района»"); setRequestOpen(true); }}
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-serif text-base transition-all duration-300 hover:scale-105"
+              style={{ background: "linear-gradient(135deg, #d4a843, #a87830)", color: "#080e14" }}
+            >
+              <Icon name="Send" size={16} />
+              Оставить заявку на этот тур
+            </button>
+          </AnimSection>
           {/* PROGRAM 2: ЫТЫК ДОЙДУ */}
           <AnimSection className="mt-20">
             <div className="text-center mb-12">
@@ -1003,8 +1023,85 @@ export default function Index() {
               </div>
             </AnimSection>
           </div>
+          <AnimSection className="text-center mt-10">
+            <button
+              onClick={() => { setRequestTour("«КИЭҤ НЬУРБА — ЫТЫК НЬУРБА» / «ЫТЫК ДОЙДУ»"); setRequestOpen(true); }}
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-serif text-base transition-all duration-300 hover:scale-105"
+              style={{ background: "linear-gradient(135deg, #d4a843, #a87830)", color: "#080e14" }}
+            >
+              <Icon name="Send" size={16} />
+              Оставить заявку на этот тур
+            </button>
+          </AnimSection>
         </div>
       </section>
+
+      {/* MODAL REQUEST */}
+      {requestOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(8,14,20,0.85)", backdropFilter: "blur(6px)" }}>
+          <div className="glass-card rounded-2xl p-8 w-full max-w-md relative" style={{ border: "1px solid rgba(212,168,67,0.25)" }}>
+            <button onClick={() => setRequestOpen(false)} className="absolute top-4 right-4 text-[#7a6040] hover:text-[#d4a843] transition-colors">
+              <Icon name="X" size={20} />
+            </button>
+            {requestSent ? (
+              <div className="text-center py-8">
+                <Icon name="CheckCircle" size={48} className="text-[#d4a843] mx-auto mb-4" />
+                <p className="font-serif text-xl text-[#e8dcc8] mb-2">Заявка отправлена!</p>
+                <p className="text-[#9b8060] text-sm">Мы свяжемся с вами в ближайшее время.</p>
+              </div>
+            ) : (
+              <>
+                <div className="mb-6">
+                  <span className="text-xs tracking-widest text-[#d4a843] uppercase">Заявка на тур</span>
+                  <h3 className="font-serif text-xl text-[#e8dcc8] mt-1">{requestTour}</h3>
+                </div>
+                <form onSubmit={handleRequestSubmit} className="space-y-4">
+                  <div>
+                    <label className="text-xs text-[#7a6040] uppercase tracking-wider block mb-1">Ваше имя</label>
+                    <input
+                      required
+                      value={requestForm.name}
+                      onChange={e => setRequestForm(f => ({ ...f, name: e.target.value }))}
+                      placeholder="Иван Иванов"
+                      className="w-full px-4 py-2.5 rounded-lg text-sm text-[#e8dcc8] outline-none focus:border-[#d4a843] transition-colors"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(212,168,67,0.2)" }}
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs text-[#7a6040] uppercase tracking-wider block mb-1">Телефон или email</label>
+                    <input
+                      required
+                      value={requestForm.phone}
+                      onChange={e => setRequestForm(f => ({ ...f, phone: e.target.value }))}
+                      placeholder="+7 900 000-00-00"
+                      className="w-full px-4 py-2.5 rounded-lg text-sm text-[#e8dcc8] outline-none focus:border-[#d4a843] transition-colors"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(212,168,67,0.2)" }}
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs text-[#7a6040] uppercase tracking-wider block mb-1">Комментарий (необязательно)</label>
+                    <textarea
+                      rows={3}
+                      value={requestForm.comment}
+                      onChange={e => setRequestForm(f => ({ ...f, comment: e.target.value }))}
+                      placeholder="Количество человек, даты, пожелания..."
+                      className="w-full px-4 py-2.5 rounded-lg text-sm text-[#e8dcc8] outline-none focus:border-[#d4a843] transition-colors resize-none"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(212,168,67,0.2)" }}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full py-3 rounded-full font-serif text-base transition-all duration-300 hover:scale-[1.02]"
+                    style={{ background: "linear-gradient(135deg, #d4a843, #a87830)", color: "#080e14" }}
+                  >
+                    Отправить заявку
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* CONTACT */}
       <section id="contact" className="py-24 px-6" style={{ background: "linear-gradient(135deg, #080e14 0%, #0a0c0a 100%)" }}>
