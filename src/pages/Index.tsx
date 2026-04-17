@@ -11,6 +11,7 @@ const IMG_THREE_BEARS = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b54
 const IMG_LOVE_BRIDGE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/3b5dacf2-9e80-4cca-a641-43edafc9c614.jpg";
 const IMG_AAR_KHATYN = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/4064e82b-f1b6-4f7d-ae5b-ea8af7916e90.jpg";
 const IMG_SETTE_MYRAАН = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/ee79571e-2e1c-415b-80be-1aac72e87938.jpg";
+const IMG_SATA_KHAYATA = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/7edbc879-dcbb-4043-bcd8-25999a23f3d7.jpg";
 
 const NAV_ITEMS = [
   { id: "home", ru: "Главная", sah: "Дьиэ" },
@@ -160,6 +161,14 @@ const SACRED_PLACES = [
     icon: "Mountain",
     img: IMG_SETTE_MYRAАН,
   },
+  {
+    id: 8,
+    name: "Сата Хайата",
+    sub: "Место силы на реке Вилюй",
+    desc: "Белые меловые скалы Сата Хайата отражаются в зеркальной глади Вилюя — одно из самых величественных мест Нюрбинского района. Осенью берега пламенеют золотом. По преданиям саха, здесь живёт могущественный иччи скалы, дающий силу и ясность духа всем, кто приходит с уважением.",
+    icon: "Waves",
+    img: IMG_SATA_KHAYATA,
+  },
 ];
 
 const GALLERY_ITEMS = [
@@ -171,6 +180,7 @@ const GALLERY_ITEMS = [
   { img: IMG_LAKE, caption: "Священное озеро", captionSah: "Ытык Күөл" },
   { img: IMG_AAR_KHATYN, caption: "Аар Хатыҥ — символ веры", captionSah: "Итэҕэл бэлиэтэ — Аар Хатыҥ" },
   { img: IMG_SETTE_MYRAАН, caption: "Сэттэ ытык мыраан — с. Чукар", captionSah: "Бага санааны толорор хаартыска" },
+  { img: IMG_SATA_KHAYATA, caption: "Сата Хайата — место силы", captionSah: "Сата Хайата — күүс сирэ" },
 ];
 
 const DIFFICULTY_COLORS: Record<string, string> = {
