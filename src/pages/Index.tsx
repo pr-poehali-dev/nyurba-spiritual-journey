@@ -77,19 +77,7 @@ const ROUTES = [
     desc: "Экспедиционный маршрут через нетронутую тайгу Нюрбинского района для опытных путешественников.",
     img: IMG_TRAIL,
   },
-  {
-    id: 5,
-    name: "Серьге-сиэргэ",
-    nameSah: "Сэргэ сирдэринэн",
-    difficulty: "easy",
-    difficultyLabel: "Лёгкий",
-    duration: "1 день",
-    type: "culture",
-    typeLabel: "Культурный",
-    distance: "30 км",
-    desc: "Обход священных коновязей (сэргэ) Нюрбинского района — живая история народа саха.",
-    img: IMG_SACRED,
-  },
+
   {
     id: 6,
     name: "Зимний Вилюй",
@@ -178,7 +166,7 @@ const GALLERY_ITEMS = [
   { img: IMG_THREE_BEARS, caption: "Три медведя — место силы", captionSah: "Үс эһэ — күүс сирэ" },
   { img: IMG_LOVE_BRIDGE, caption: "Мост Любви — с. Дьиикимдэ", captionSah: "Таптал кэмпириэтэ — Дьиикимдэ" },
   { img: IMG_HERO, caption: "Тропа Кочай", captionSah: "Кочай суола" },
-  { img: IMG_SACRED, caption: "Сэргэ — знак предков", captionSah: "Сэргэ — эбэ-эhэ бэлиэтэ" },
+
   { img: IMG_LAKE, caption: "Священное озеро", captionSah: "Ытык Күөл" },
   { img: IMG_AAR_KHATYN, caption: "Аар Хатыҥ — символ веры", captionSah: "Итэҕэл бэлиэтэ — Аар Хатыҥ" },
   { img: IMG_SETTE_MYRAАН, caption: "Сэттэ ытык мыраан — с. Чукар", captionSah: "Бага санааны толорор хаартыска" },
