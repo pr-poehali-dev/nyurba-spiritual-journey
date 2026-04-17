@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import NyurbaMap from "@/components/NyurbaMap";
 
-const IMG_HERO = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/7a85929c-2a1d-47b3-8664-f48e981a88b6.jpg";
+const IMG_HERO = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/93aa2806-e343-42c6-ad73-12dcdbf91d5a.jpg";
 const IMG_SACRED = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/0e14db09-2da4-40f4-8089-167df51ef0b0.jpg";
 const IMG_TRAIL = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/3f65f7c6-ced0-418c-b524-44ead2ccbaf0.jpg";
 const IMG_LAKE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/7b4f8f24-c78f-418a-b82a-db0cf4e442ca.jpg";
