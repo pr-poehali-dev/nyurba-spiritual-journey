@@ -131,17 +131,26 @@ const SACRED_PLACES = [
     icon: "TreePine",
     img: IMG_BAAY_TIIT,
   },
+  {
+    id: 5,
+    name: "Таптал Кэмпириэтэ",
+    sub: "Мост Любви — с. Дьиикимдэ",
+    desc: "Белый мост с алым сердцем и фонтанами в селе Дьиикимдэ — романтическое место силы Нюрбинского района. Молодожёны приходят сюда загадать желание и скрепить союз. Красота этого места поражает всех путников.",
+    icon: "Heart",
+    img: IMG_LOVE_BRIDGE,
+  },
 ];
 
 const IMG_BAAY_TIIT = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/6567bfa1-d81f-4ea4-8640-d8ff1f549636.jpg";
 const IMG_THREE_BEARS = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/369f07a6-fd7e-4755-8958-d8a92826408a.jpg";
+const IMG_LOVE_BRIDGE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/3b5dacf2-9e80-4cca-a641-43edafc9c614.jpg";
 
 const GALLERY_ITEMS = [
   { img: IMG_BAAY_TIIT, caption: "Баай тиит — символ богатства", captionSah: "Эллэй хоhуйбут баай тиитэ" },
   { img: IMG_THREE_BEARS, caption: "Три медведя — место силы", captionSah: "Үс эһэ — күүс сирэ" },
+  { img: IMG_LOVE_BRIDGE, caption: "Мост Любви — с. Дьиикимдэ", captionSah: "Таптал кэмпириэтэ — Дьиикимдэ" },
   { img: IMG_HERO, caption: "Тропа Кочай", captionSah: "Кочай суола" },
   { img: IMG_SACRED, caption: "Сэргэ — знак предков", captionSah: "Сэргэ — эбэ-эhэ бэлиэтэ" },
-  { img: IMG_TRAIL, caption: "Тропы Нюрбы", captionSah: "Ньурба суоллара" },
   { img: IMG_LAKE, caption: "Священное озеро", captionSah: "Ытык Күөл" },
 ];
 
