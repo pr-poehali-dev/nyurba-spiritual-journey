@@ -6,6 +6,9 @@ const IMG_HERO = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941
 const IMG_SACRED = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/0e14db09-2da4-40f4-8089-167df51ef0b0.jpg";
 const IMG_TRAIL = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/3f65f7c6-ced0-418c-b524-44ead2ccbaf0.jpg";
 const IMG_LAKE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/files/7b4f8f24-c78f-418a-b82a-db0cf4e442ca.jpg";
+const IMG_BAAY_TIIT = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/6567bfa1-d81f-4ea4-8640-d8ff1f549636.jpg";
+const IMG_THREE_BEARS = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/369f07a6-fd7e-4755-8958-d8a92826408a.jpg";
+const IMG_LOVE_BRIDGE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/3b5dacf2-9e80-4cca-a641-43edafc9c614.jpg";
 
 const NAV_ITEMS = [
   { id: "home", ru: "Главная", sah: "Дьиэ" },
@@ -140,10 +143,6 @@ const SACRED_PLACES = [
     img: IMG_LOVE_BRIDGE,
   },
 ];
-
-const IMG_BAAY_TIIT = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/6567bfa1-d81f-4ea4-8640-d8ff1f549636.jpg";
-const IMG_THREE_BEARS = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/369f07a6-fd7e-4755-8958-d8a92826408a.jpg";
-const IMG_LOVE_BRIDGE = "https://cdn.poehali.dev/projects/43add130-f0a3-4685-b545-30941f096855/bucket/3b5dacf2-9e80-4cca-a641-43edafc9c614.jpg";
 
 const GALLERY_ITEMS = [
   { img: IMG_BAAY_TIIT, caption: "Баай тиит — символ богатства", captionSah: "Эллэй хоhуйбут баай тиитэ" },
