@@ -3,6 +3,7 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from datetime import datetime, timezone, timedelta
 
 
 def handler(event: dict, context) -> dict:
@@ -22,6 +23,9 @@ def handler(event: dict, context) -> dict:
     comment = body.get("comment", "").strip()
     tour = body.get("tour", "").strip()
 
+    msk = timezone(timedelta(hours=9))
+    now = datetime.now(msk).strftime("%d.%m.%Y %H:%M")
+
     if not name or not phone:
         return {"statusCode": 400, "headers": headers, "body": json.dumps({"error": "Имя и телефон обязательны"})}
 
@@ -40,6 +44,7 @@ def handler(event: dict, context) -> dict:
 Имя: {name}
 Контакт: {phone}
 Комментарий: {comment or 'не указан'}
+Дата и время: {now}
 """
 
     html = f"""
@@ -52,6 +57,7 @@ def handler(event: dict, context) -> dict:
     <tr><td style="padding: 8px 0; color: #888;">Имя</td><td style="padding: 8px 0; color: #333;">{name}</td></tr>
     <tr><td style="padding: 8px 0; color: #888;">Контакт</td><td style="padding: 8px 0; color: #333;">{phone}</td></tr>
     <tr><td style="padding: 8px 0; color: #888;">Комментарий</td><td style="padding: 8px 0; color: #333;">{comment or '<i>не указан</i>'}</td></tr>
+    <tr><td style="padding: 8px 0; color: #888;">Дата и время</td><td style="padding: 8px 0; color: #333;">{now}</td></tr>
   </table>
 </div>
 """
