@@ -25,9 +25,9 @@ def handler(event: dict, context) -> dict:
     if not name or not phone:
         return {"statusCode": 400, "headers": headers, "body": json.dumps({"error": "Имя и телефон обязательны"})}
 
-    smtp_password = os.environ["SMTP_PASSWORD"]
-    sender = "sivail@yandex.ru"
-    recipient = "sivail@yandex.ru"
+    smtp_password = os.environ["GMAIL_APP_PASSWORD"]
+    sender = "kutaaxaansergen@gmail.com"
+    recipient = "kutaaxaansergen@gmail.com"
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"Новая заявка на тур: {tour}"
@@ -59,7 +59,8 @@ def handler(event: dict, context) -> dict:
     msg.attach(MIMEText(text, "plain", "utf-8"))
     msg.attach(MIMEText(html, "html", "utf-8"))
 
-    with smtplib.SMTP_SSL("smtp.yandex.ru", 465) as server:
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()
         server.login(sender, smtp_password)
         server.sendmail(sender, recipient, msg.as_string())
 
