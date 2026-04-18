@@ -20,6 +20,7 @@ export const NAV_ITEMS = [
   { id: "gallery", ru: "Галерея", sah: "Галерея" },
   { id: "culture", ru: "О культуре", sah: "Култуура" },
   { id: "program", ru: "Программа тура", sah: "Тур программата" },
+  { id: "taptal", ru: "Таптал Алгыһа", sah: "Таптал Алгыһа" },
   { id: "contact", ru: "Контакты", sah: "Сибэтиэй" },
 ];
 
