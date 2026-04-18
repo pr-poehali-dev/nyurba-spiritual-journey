@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, FormEvent } from "react";
 import Icon from "@/components/ui/icon";
 import { useInView } from "@/lib/nyurba-data";
 
@@ -111,8 +111,33 @@ const INDICATORS = [
   { icon: "BookOpen", label: "Знания", color: "text-emerald-400" },
 ];
 
+const SEND_URL = "https://functions.poehali.dev/556db68f-faa3-4871-9852-301c304c5fde";
+
 export default function TransformGame() {
   const [activeTab, setActiveTab] = useState<"aar" | "wealth">("aar");
+  const [form, setForm] = useState({ name: "", phone: "", comment: "" });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+    try {
+      await fetch(SEND_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, tour: "Аар Куйаар / Вершина богатства" }),
+      });
+      setSent(true);
+      setForm({ name: "", phone: "", comment: "" });
+    } catch {
+      setError("Ошибка отправки. Попробуйте ещё раз.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#080e14] text-[#e8dcc8] font-sans overflow-x-hidden">
@@ -147,12 +172,20 @@ export default function TransformGame() {
               10–14 участников
             </span>
           </div>
-          <a
-            href="#program"
-            className="mt-10 inline-block px-8 py-3 bg-[#d4a843] text-[#080e14] font-sans font-semibold rounded tracking-wide hover:bg-[#e0b855] transition-colors"
-          >
-            Подробнее о программе
-          </a>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <a
+              href="#program"
+              className="px-8 py-3 bg-[#d4a843] text-[#080e14] font-sans font-semibold rounded tracking-wide hover:bg-[#e0b855] transition-colors"
+            >
+              Программа дня
+            </a>
+            <a
+              href="#signup"
+              className="px-8 py-3 border border-[#d4a843]/60 text-[#d4a843] font-sans font-semibold rounded tracking-wide hover:bg-[#d4a843]/10 transition-colors"
+            >
+              Записаться
+            </a>
+          </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-60">
           <Icon name="ChevronDown" size={24} className="text-[#d4a843]" />
@@ -439,6 +472,86 @@ export default function TransformGame() {
             </div>
           </FadeSection>
         </div>
+      </section>
+
+      {/* Форма записи */}
+      <section id="signup" className="py-20 px-4 max-w-2xl mx-auto">
+        <FadeSection className="text-center mb-10">
+          <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase mb-3">Участие</p>
+          <h2 className="font-serif text-4xl text-[#e8dcc8] mb-2">Записаться</h2>
+          <p className="text-[#b8a898] text-sm">Оставьте имя и контакт — ведущий свяжется с вами для подтверждения</p>
+        </FadeSection>
+        <FadeSection>
+          {sent ? (
+            <div className="glass-card rounded-xl p-10 text-center border border-[#d4a843]/20">
+              <Icon name="CheckCircle" size={48} className="text-[#d4a843] mx-auto mb-4" />
+              <h3 className="font-serif text-2xl text-[#e8dcc8] mb-2">Заявка отправлена!</h3>
+              <p className="text-[#b8a898] text-sm">Ведущий свяжется с вами в ближайшее время</p>
+              <button
+                onClick={() => setSent(false)}
+                className="mt-6 text-[#d4a843] text-sm underline underline-offset-4 hover:text-[#e0b855] transition-colors"
+              >
+                Отправить ещё одну заявку
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="glass-card rounded-xl p-8 border border-[#d4a843]/10 space-y-5">
+              <div>
+                <label className="block text-xs text-[#b8a898] mb-2 tracking-wide uppercase">Имя *</label>
+                <input
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  placeholder="Ваше имя"
+                  className="w-full bg-white/5 border border-[#d4a843]/20 rounded px-4 py-3 text-[#e8dcc8] text-sm placeholder-[#b8a898]/50 focus:outline-none focus:border-[#d4a843]/60 transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-[#b8a898] mb-2 tracking-wide uppercase">Телефон / WhatsApp *</label>
+                <input
+                  type="text"
+                  required
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  placeholder="+7 (___) ___-__-__"
+                  className="w-full bg-white/5 border border-[#d4a843]/20 rounded px-4 py-3 text-[#e8dcc8] text-sm placeholder-[#b8a898]/50 focus:outline-none focus:border-[#d4a843]/60 transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-[#b8a898] mb-2 tracking-wide uppercase">Комментарий</label>
+                <textarea
+                  rows={3}
+                  value={form.comment}
+                  onChange={(e) => setForm({ ...form, comment: e.target.value })}
+                  placeholder="Вопросы, пожелания..."
+                  className="w-full bg-white/5 border border-[#d4a843]/20 rounded px-4 py-3 text-[#e8dcc8] text-sm placeholder-[#b8a898]/50 focus:outline-none focus:border-[#d4a843]/60 transition-colors resize-none"
+                />
+              </div>
+              {error && <p className="text-red-400 text-sm">{error}</p>}
+              <button
+                type="submit"
+                disabled={sending}
+                className="w-full py-4 bg-[#d4a843] text-[#080e14] font-sans font-semibold rounded tracking-wide hover:bg-[#e0b855] transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {sending ? (
+                  <>
+                    <Icon name="Loader" size={16} className="animate-spin" />
+                    Отправляю...
+                  </>
+                ) : (
+                  <>
+                    <Icon name="Send" size={16} />
+                    Записаться на программу
+                  </>
+                )}
+              </button>
+              <p className="text-center text-[#b8a898] text-xs opacity-60">
+                Место проведения: Баай Тиит, Нюрбинский район · 10–14 участников
+              </p>
+            </form>
+          )}
+        </FadeSection>
       </section>
 
       {/* Footer */}
