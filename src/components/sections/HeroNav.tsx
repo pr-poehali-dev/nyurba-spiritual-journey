@@ -31,6 +31,12 @@ export default function HeroNav({ activeSection, menuOpen, setMenuOpen, scrollTo
                 {item.ru}
               </button>
             ))}
+            <a
+              href="/transform-game"
+              className="text-sm tracking-wide text-[#b09870] hover:text-[#d4a843] transition-colors duration-300 border border-[#d4a843]/30 px-3 py-1 rounded hover:border-[#d4a843]/60"
+            >
+              Аар Куйаар
+            </a>
           </div>
 
           <button className="md:hidden text-[#d4a843]" onClick={() => setMenuOpen(!menuOpen)}>
@@ -50,6 +56,13 @@ export default function HeroNav({ activeSection, menuOpen, setMenuOpen, scrollTo
                 <span className="ml-2 text-[10px] text-[#7a6040]">{item.sah}</span>
               </button>
             ))}
+            <a
+              href="/transform-game"
+              className="text-left py-2 px-3 rounded text-[#b09870] hover:text-[#d4a843] hover:bg-white/5 transition-colors font-sans text-sm tracking-wide"
+            >
+              <span className="text-[#d4a843] mr-2">◈</span>Аар Куйаар
+              <span className="ml-2 text-[10px] text-[#7a6040]">Трансформационные игры</span>
+            </a>
           </div>
         )}
       </nav>
