@@ -140,7 +140,10 @@ export default function RoutesGallery({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredRoutes.map((route, i) => (
               <AnimSection key={route.id} className="route-card" style={{ transitionDelay: `${i * 60}ms` } as React.CSSProperties}>
-                <div className="glass-card rounded overflow-hidden h-full flex flex-col group cursor-pointer">
+                <div
+                  className="glass-card rounded overflow-hidden h-full flex flex-col group cursor-pointer"
+                  onClick={() => (route as { detailUrl?: string }).detailUrl && (window.location.href = (route as { detailUrl?: string }).detailUrl!)}
+                >
                   <div className="relative h-44 overflow-hidden">
                     <img
                       src={route.img}
@@ -164,6 +167,11 @@ export default function RoutesGallery({
                     <div className="flex items-center gap-4 text-xs text-[#7a6040] pt-3 border-t border-[#1e160a]">
                       <span className="flex items-center gap-1"><Icon name="Clock" size={12} />{route.duration}</span>
                       <span className="flex items-center gap-1"><Icon name="MapPin" size={12} />{route.distance}</span>
+                      {(route as { detailUrl?: string }).detailUrl && (
+                        <span className="ml-auto flex items-center gap-1 text-[#d4a843] hover:opacity-80">
+                          <Icon name="ArrowRight" size={12} />Подробнее
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
